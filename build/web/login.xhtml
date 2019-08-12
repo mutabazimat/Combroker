@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Com Broker - Login</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="css/datepicker3.css" rel="stylesheet"/>
+        <link href="css/styles.css" rel="stylesheet"/>
+        <style>
+            .panel {
+                border: 0;
+                border: solid 2px #1fb49b;
+                box-shadow: 2px 2px 10px black;
+
+            }
+            input.form-control {
+                border: solid 0px white;
+                border-bottom: 3px solid #1fb49b;
+                box-shadow: none;
+                height: 46px;
+            }
+        </style>
+    </h:head>
+    <h:body>
+
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-1 col-sm-7 col-sm-offset-2 col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default text-">
+                    <div class="text-center">
+                        <img style="width: 30%; margin-top: 3%;" src="images/login-icon.png"/>
+                    </div>
+                    <div class="panel-body">
+                        <h:form role="form">
+                            <p:messages/>
+                            <fieldset>
+                                <div class="form-group">
+                                    <label>Username </label>
+                                    <p:inputText value="#{Broker.username}" placeholder="" class="form-control"/>
+                                </div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <p:password class="form-control" placeholder="" value="#{Broker.password}"/>
+                                </div>
+                                <div class="checkbox">
+                                </div>
+                                <h:commandLink action="#{Broker.login()}" class="btn btn-primary">Login</h:commandLink></fieldset>
+                        </h:form>
+                    </div>
+                </div>
+            </div><!-- /.col-->
+        </div><!-- /.row -->	
+
+
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+    </h:body>
+</html>
+
