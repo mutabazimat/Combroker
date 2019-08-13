@@ -45,6 +45,9 @@ public class Wholesaler {
     @JoinColumn(name="cellId")
     private Cell cell;
     
+    @OneToMany(mappedBy = "wholesaler")
+    private List<Transaction> transactions;
+    
 //    @OneToMany(mappedBy = "wholesaler")
 //    private List<Product> products;
     
@@ -53,9 +56,6 @@ public class Wholesaler {
 
     public Wholesaler() {
     }
-    
-    
-    
 
     public int getId() {
         return id;
@@ -162,6 +162,14 @@ public class Wholesaler {
 
     public void setBusinesses(List<Business> businesses) {
         this.businesses = businesses;
+    }
+
+    public List<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(List<Transaction> transactions) {
+        this.transactions = transactions;
     }
 
     
