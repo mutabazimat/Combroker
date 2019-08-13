@@ -43,6 +43,9 @@ public class Retailer {
     @JoinColumn(name="cellId")
     private Cell cell;
     
+    @OneToMany(mappedBy = "retailer")
+    private List<Transaction> transactions;
+    
 //    @OneToMany(mappedBy = "retailer")
 //    private List<Product> products;
     
@@ -145,13 +148,13 @@ public class Retailer {
         this.cell = cell;
     }
 
-//    public List<Product> getProducts() {
-//        return products;
-//    }
-//
-//    public void setProducts(List<Product> products) {
-//        this.products = products;
-//    }
-    
+    public List<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(List<Transaction> transactions) {
+        this.transactions = transactions;
+    }
+
     
 }
